@@ -116,7 +116,22 @@ for(const quoteObj of quotes) {
 
 for(const quoteObj of quotes) {
   if(quoteObj.authorId === 1) {
-    console.log(`Sydney's Quote: ${quoteObj.quote}`)
+    // console.log(`Sydney's Quote: ${quoteObj.quote}`)
   }
 }
 
+/****** Start of Sat Notes *******/
+const htmlString = '<h1>I am from JS</h1>'
+document.getElementById('quotes').innerHTML = htmlString
+
+const firstAuthor = authors[0].firstName
+document.getElementById('quotes').innerHTML = `<h1>${firstAuthor}</h1>`
+
+let htmlAuthors = '<ul>'
+for(const author of authors) {
+  console.log(author)
+  htmlAuthors = `<li>${author.firstName}</li>`
+}
+htmlAuthors += '</ul>'
+
+document.getElementById('authorsList').innerHTML = htmlAuthors
