@@ -14,17 +14,20 @@
     <h1>Quote Book</h1>
     <article>
       <section class="quoteBlockForm">
-        <input type="text" placeholder="quote" />
-        <input type="text" placeholder="author" />
-      <button>Submit</button>
-    </section>
-    <section id="quoteBlocks" class="quoteBlocks">
-      <!-- <p id="quote1" class="quote">“I never dreamed about success. I worked for it.” —Estée Lauder</p>
-      <p id="quote2" class="quote">“Success is peace of mind, which is a direct result of self-satisfaction in knowing you made the effort to become the best of which you are capable.” —John Wooden</p>
-      <p class="quote">"Nothing in the world can take the place of Persistence. Talent will not; nothing is more common than unsuccessful men with talent. Genius will not; unrewarded genius is almost a proverb. Education will not; the world is full of educated derelicts. The slogan 'Press On' has solved and always will solve the problems of the human race." —Calvin Coolidge</p>      <p class="quote">“Success usually comes to those who are too busy looking for it.” — Henry David Thoreau</p> -->
-    </section>
-  </article>
-  <script type="module" src="main.js"></script>
+        <input type="text" id="quoteText" placeholder="quote" />
+        <input type="text" id="quoteAuthor" placeholder="author" />
+        <div>
+          <p>Is Author Alive</p>
+          <input type="radio" id="aliveTrue" name="alive" value="true" />
+          <label for="aliveTrue">Yes</label>
+          <input type="radio" id="aliveFalse" name="alive" value="false" />
+          <label for="aliveFalse">No</label>
+        </div>
+        <button id="submitNewQuote">Submit</button>
+      </section>
+      <section id="quoteBlocks" class="quoteBlocks"></section>
+    </article>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
 

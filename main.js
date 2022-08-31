@@ -1,4 +1,4 @@
-import {getQuotes} from './quotes.js'
+import {getQuotes, addNewQuote} from './quotes.js'
 
 const authors = [
   {
@@ -61,10 +61,74 @@ const displayQuotes = () => {
 
 displayQuotes()
 
-const newFuntion = () => {
-  const quotes = getQuotes()
-}
 
-// for(const quote of quotes) {
-//   //quote === quotes[i] above
-// }
+// event listener for the submit button
+document.addEventListener("click", (e) => {
+  if(e.target.id == "submitNewQuote") {
+    //get values from text box
+    const quote = document.getElementById("quoteText").value
+    const authorText = document.getElementById("quoteAuthor").value
+
+    // This finds the author object that matches the input author text
+    const authorObj = authors.find(({ firstName }) => firstName === authorText);
+    
+    // Finding if author is alive
+    const alive = document.querySelector("input[name=alive]:checked")?.value;
+    
+    //Long version
+    // let isAlive
+    // if(alive === "true") {
+      //   isAlive = true
+      // } else {
+        //   isAlive = false
+        // }
+        
+    //med length version
+    // let isAlive = false
+    // if(alive === "true") {
+    //   isAlive = true
+    // }
+    
+    // shortest - ternary version
+    const isAlive = alive === "true" ? true : false
+    
+    console.log(isAlive)
+
+    
+    // create a newQuote object
+    const newQuote = {
+      date: "08/30/22",
+      authorId: authorObj.id,
+      quote: quote,
+      hashTags: [],
+      isAuthorAlive: isAlive 
+    }
+    console.log("newQuote", newQuote)
+    addNewQuote(newQuote)
+  }
+
+  // import and invoke a function from quotes.js
+
+})
+
+document.addEventListener("stateChanged", (e) => {
+  displayQuotes()
+})
+  
+// HTML ids that code connects to 
+// StateChanged Event listener (custom)
+// start with empty array and add a quote
+
+// Steps to take
+// event listener for the submit button
+  //get values from text box
+  // create a newQuote object
+  // import and invoke a function from quotes.js
+
+// Add newQuote to quotes array (export function)
+  // use a function with array method push
+
+// Display on DOM
+  // dispatch custom event 
+  // Add event listener for custom event 
+    // displayQuotes()
